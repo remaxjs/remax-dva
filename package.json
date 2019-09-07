@@ -1,6 +1,6 @@
 {
   "name": "remax-dva",
-  "version": "1.0.0",
+  "version": "1.0.0-beta.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,6 @@
   "dependencies": {
     "dva-core": "^2.0.0",
     "redux": "^4.0.4",
-    "remax-redux": "^7.1.1-beta.1"
+    "remax-redux": "^7.1.1"
   }
 }

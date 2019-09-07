@@ -13,7 +13,7 @@ export default function(opts = {}) {
 
   const app = create(opts, createOpts);
   const oldAppStart = app.start;
-  app.start = () => {
+  app.start = function() {
     if (!app._store) {
       oldAppStart.call(app);
     }
@@ -24,7 +24,9 @@ export default function(opts = {}) {
 }
 
 function getProvider(store, app) {
-  const DvaRoot = ({ children }) => <Provider store={store}>{children}</Provider>;
+  function DvaRoot({ children }) {
+    return React.cloneElement(Provider, { store }, children);
+  }
   return DvaRoot;
 }
 
