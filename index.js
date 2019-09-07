@@ -25,7 +25,7 @@ export default function(opts = {}) {
 
 function getProvider(store, app) {
   function DvaRoot({ children }) {
-    return React.cloneElement(Provider, { store }, children);
+    return React.createElement(Provider, { store }, children);
   }
   return DvaRoot;
 }
