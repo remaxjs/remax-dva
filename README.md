@@ -26,9 +26,7 @@ const app = dva();
 
 app.model(todo);
 
-const App = app.start(({ children }) => {
-  return <>{children}</>;
-});
+const App = app.start(({ children }) => children);
 
 export default App;
 ```
