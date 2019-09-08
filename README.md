@@ -19,7 +19,7 @@ $ yarn add remax-dva
 ```javascript
 // app.js
 import * as React from 'react';
-import dva, { connect } from '@remax/dva';
+import dva, { connect } from 'remax-dva';
 import todo from './models/todo';
 
 const app = dva();
