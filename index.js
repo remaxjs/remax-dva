@@ -13,22 +13,21 @@ export default function(opts = {}) {
 
   const app = create(opts, createOpts);
   const oldAppStart = app.start;
-  app.start = function() {
+  app.start = function(App) {
     if (!app._store) {
       oldAppStart.call(app);
     }
     const store = app._store;
-    return getProvider(store, this);
+
+    function DvaRoot(props) {
+      return React.createElement(Provider, { store }, React.createElement(App, props));
+    }
+    return DvaRoot;
   };
   return app;
 }
 
-function getProvider(store, app) {
-  function DvaRoot({ children }) {
-    return React.createElement(Provider, { store }, children);
-  }
-  return DvaRoot;
-}
+function getProvider(store, app) {}
 
 export { connect, connectAdvanced, useSelector, useDispatch, useStore, shallowEqual };
 export { bindActionCreators };
