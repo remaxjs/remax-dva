@@ -31,6 +31,8 @@ const App = app.start(({ children }) => children);
 export default App;
 ```
 
+示例：https://github.com/remaxjs/todo-demo/tree/master/alipay-dva
+
 ## 协议
 
 MIT
