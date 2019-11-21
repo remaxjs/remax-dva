@@ -19,10 +19,10 @@ export default function(opts = {}) {
     }
     const store = app._store;
 
-    function DvaRoot(props) {
-      return React.createElement(Provider, { store }, React.createElement(App, props));
+    function DvaRoot(props, ref) {
+      return React.createElement(Provider, { store }, React.createElement(App, { ...props, ref }));
     }
-    return DvaRoot;
+    return React.forwardRef(DvaRoot);
   };
   return app;
 }
