@@ -13,14 +13,21 @@ export default function(opts = {}) {
 
   const app = create(opts, createOpts);
   const oldAppStart = app.start;
-  app.start = function(App) {
+  app.start = function(App, options = {}) {
     if (!app._store) {
       oldAppStart.call(app);
     }
     const store = app._store;
 
     function DvaRoot(props, ref) {
-      return React.createElement(Provider, { store }, React.createElement(App, { ...props, ref }));
+      const passedProps = { ...props };
+      if (options.forwardRef) {
+        passedProps.ref = ref;
+      }
+      return React.createElement(Provider, { store }, React.createElement(App, passedProps));
+    }
+    if (!options.forwardRef) {
+      return DvaRoot;
     }
     return React.forwardRef(DvaRoot);
   };
