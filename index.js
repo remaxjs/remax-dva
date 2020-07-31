@@ -1,5 +1,5 @@
 import React from 'react';
-import { Provider, connect, connectAdvanced, useSelector, useDispatch, useStore, shallowEqual } from 'remax-redux';
+import { Provider, connect, connectAdvanced, useSelector, useDispatch, useStore, shallowEqual } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { utils, create, saga } from 'dva-core';
 
