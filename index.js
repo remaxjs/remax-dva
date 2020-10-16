@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider, connect, connectAdvanced, useSelector, useDispatch, useStore, shallowEqual } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { utils, create, saga } from 'dva-core';
+import { create, saga } from 'dva-core';
 
 export default function(opts = {}) {
   const createOpts = {
@@ -33,8 +33,6 @@ export default function(opts = {}) {
   };
   return app;
 }
-
-function getProvider(store, app) {}
 
 export { connect, connectAdvanced, useSelector, useDispatch, useStore, shallowEqual };
 export { bindActionCreators };
