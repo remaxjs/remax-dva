@@ -173,10 +173,10 @@ dom-walk@^0.1.0:
   resolved "https://registry.npm.alibaba-inc.com/dom-walk/download/dom-walk-0.1.1.tgz#672226dc74c8f799ad35307df936aba11acd6018"
   integrity sha1-ZyIm3HTI95mtNTB9+TaroRrNYBg=
 
-dva-core@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.npm.alibaba-inc.com/dva-core/download/dva-core-2.0.0.tgz#7fce737f4df1c9f6043c3385210fdfc0f0332042"
-  integrity sha1-f85zf03xyfYEPDOFIQ/fwPAzIEI=
+dva-core@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.npm.taobao.org/dva-core/download/dva-core-2.0.3.tgz?cache=0&sync_timestamp=1600830248957&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fdva-core%2Fdownload%2Fdva-core-2.0.3.tgz#bb219a67e8082498163d225012af17b3c10741ae"
+  integrity sha1-uyGaZ+gIJJgWPSJQEq8Xs8EHQa4=
   dependencies:
     "@babel/runtime" "^7.0.0"
     flatten "^1.0.2"

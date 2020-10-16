@@ -1,9 +1,17 @@
-import React from 'react';
-import { Provider, connect, connectAdvanced, useSelector, useDispatch, useStore, shallowEqual } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { utils, create, saga } from 'dva-core';
+import React from "react";
+import {
+  Provider,
+  connect,
+  connectAdvanced,
+  useSelector,
+  useDispatch,
+  useStore,
+  shallowEqual,
+} from "react-redux";
+import { bindActionCreators } from "redux";
+import { create, saga } from "dva-core";
 
-export default function(opts = {}) {
+export default function (opts = {}) {
   const createOpts = {
     setupMiddlewares(middlewares) {
       return middlewares;
@@ -13,7 +21,7 @@ export default function(opts = {}) {
 
   const app = create(opts, createOpts);
   const oldAppStart = app.start;
-  app.start = function(App, options = {}) {
+  app.start = function (App, options = {}) {
     if (!app._store) {
       oldAppStart.call(app);
     }
@@ -24,7 +32,11 @@ export default function(opts = {}) {
       if (options.forwardRef) {
         passedProps.ref = ref;
       }
-      return React.createElement(Provider, { store }, React.createElement(App, passedProps));
+      return React.createElement(
+        Provider,
+        { store },
+        React.createElement(App, passedProps)
+      );
     }
     if (!options.forwardRef) {
       return DvaRoot;
@@ -34,8 +46,14 @@ export default function(opts = {}) {
   return app;
 }
 
-function getProvider(store, app) {}
-
-export { connect, connectAdvanced, useSelector, useDispatch, useStore, shallowEqual };
+export {
+  connect,
+  connectAdvanced,
+  useSelector,
+  useDispatch,
+  useStore,
+  DispatchProp,
+  shallowEqual,
+};
 export { bindActionCreators };
 export { saga };
